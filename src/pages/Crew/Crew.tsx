@@ -1,7 +1,7 @@
 function CrewPage() {
   return (
     <div>
-
+      Crew
     </div>
   );
 }

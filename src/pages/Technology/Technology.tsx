@@ -1,7 +1,7 @@
 function TechnologyPage() {
   return (
     <div>
-
+      Technology
     </div>
   );
 }
