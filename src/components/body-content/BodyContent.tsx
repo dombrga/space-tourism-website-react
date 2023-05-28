@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react"
+import { ReactNode } from "react"
 
 interface props {
   children: ReactNode
@@ -10,4 +10,4 @@ function BodyContent({ children }: props) {
   </div>
 }
 
-export default memo(BodyContent)
+export default BodyContent

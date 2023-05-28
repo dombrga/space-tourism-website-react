@@ -1,0 +1,24 @@
+.nav-non-mobile {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline;
+  }
+}
+
+.nav-mobile {
+
+}
+
+@media (min-width: 460px) {
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-non-mobile {
+    display: block;
+  }
+}
+

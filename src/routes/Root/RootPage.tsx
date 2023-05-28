@@ -12,12 +12,8 @@ function RootPage() {
       console.log('redirecting', redirect('/home'));
       
       
-      navigate('/home')
+      // navigate('/home')
     }
-  
-    // return () => {
-    //   second
-    // }
   }, [])
   
   console.log('location', location);
