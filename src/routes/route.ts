@@ -1,10 +1,7 @@
+import { CrewPage, DestinationPage, ErrorPage, HomePage, TechnologyPage } from "@/pages";
 import { createBrowserRouter } from "react-router-dom";
-import CrewPage from "../pages/Crew/Crew";
-import DestinationPage from "../pages/Destination/Destination";
-import ErrorPage from "../pages/Error/ErrorPage";
-import HomePage from "../pages/Home/Home";
-import TechnologyPage from "../pages/Technology/Technology";
 import RootPage from "./Root/RootPage";
+
 
 const router = createBrowserRouter([
   {
