@@ -1,39 +1,36 @@
-import { Link } from "react-router-dom";
-import HamburgerMenu from "../hamburger-menu/HamburgerMenu";
-
+import HamburgerMenu from "../layout/navigation/hamburger-menu/HamburgerMenu";
+import Sidebar from "../layout/navigation/sidebar/Sidebar";
+import SingleLink from "../layout/navigation/single-link/SingleLink";
 import s from "./GlobalNavbar.module.scss";
+import { useWindowSize } from "@/hooks/hooks";
+import { useState } from "react";
 
-// interface props {
-//   s: string
-// }
 function GlobalNavBar() {
-  const desktopTabletNav = (
-    <ul className={s['nav-non-mobile']}>
-      <li>
-        <Link to="/home">Home</Link>
-      </li>
-      <li>
-        <Link to="/destination">Destination</Link>
-      </li>
-      <li>
-        <Link to="/crew">Crew</Link>
-      </li>
-      <li>
-        <Link to="/technology">Technology</Link>
-      </li>
-    </ul>
-  );
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [windowWidth, _] = useWindowSize();
+
+  const isDesktop = windowWidth > 768
+  // console.log('isDesktop', isDesktop);
+  
+  const desktopTabletNav = <SingleLink isDesktop={isDesktop} />;
 
   const mobileNav = (
-    <div className={s['nav-mobile']}>
-      <HamburgerMenu />
-    </div>
+    // <div className={s['nav-mobile']}>
+    <>
+      <HamburgerMenu
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
+    </>
   );
 
   return (
-    <nav>
-      { desktopTabletNav }
-      { mobileNav }
+    <nav className={s["nav"]}>
+      {windowWidth < 460 ? mobileNav : desktopTabletNav}
     </nav>
   );
 }

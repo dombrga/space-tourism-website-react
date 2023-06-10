@@ -5,7 +5,7 @@ import './index.scss'
 import router from './routes/route'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <RouterProvider router={router} />
-  // </React.StrictMode>
+  </React.StrictMode>
 )

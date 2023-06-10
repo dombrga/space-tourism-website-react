@@ -6,7 +6,6 @@ import s from './TopHeader.module.scss'
 const headerClass = [s.header].join(' ')
 
 function TopHeader() {
-  console.log('s', s);
   return (
     <header className={headerClass}>
       <div>

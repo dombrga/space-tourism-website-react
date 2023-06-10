@@ -1,6 +1,6 @@
 function DestinationPage() {
   return (
-    <div>
+    <div className="destination">
       Destination
     </div>
   );

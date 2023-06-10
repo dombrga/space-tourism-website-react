@@ -58,6 +58,9 @@ p, h1, h2, h3, h4, h5, h6 {
   min-width: 100%;
 }
 
+a { text-decoration: none; }
+.active-link { border-bottom: 1.5px solid white; }
+
 .bg-home {
   background: url('./assets/home/background-home-mobile.jpg') 0% 0% / cover no-repeat;
 }
