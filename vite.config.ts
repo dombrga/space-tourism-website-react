@@ -13,7 +13,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  // publicDir: '/space-tourism-website-react/',
-  // appType: 'spa',
-  // envDir: './environments'
+  publicDir: '/space-tourism-website-react/',
+  appType: 'spa',
+  envDir: './environments'
 })
