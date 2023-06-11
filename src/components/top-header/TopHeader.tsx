@@ -6,7 +6,7 @@ import s from './TopHeader.module.scss'
 const headerClass = [s.header].join(' ')
 
 function TopHeader() {
-  console.log('import.meta.env.VITE_ENV', import.meta.env.VITE_ENV, import.meta.env.VITE_BASE_URL)
+  console.log('vite import.meta.env.VITE_ENV', import.meta.env.VITE_ENV, import.meta.env.VITE_BASE_URL)
 
   return (
     <header className={headerClass}>
