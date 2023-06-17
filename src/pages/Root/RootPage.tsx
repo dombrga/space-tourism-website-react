@@ -6,7 +6,7 @@ import TopHeader from '../../components/top-header/TopHeader';
 function RootPage() {
   
   
-  console.log('location', location);
+  // console.log('location', location);
   
   return (
     <BodyContent>

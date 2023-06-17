@@ -1,6 +1,6 @@
 import { CrewPage, DestinationPage, ErrorPage, HomePage, TechnologyPage } from "@/pages";
 import { createBrowserRouter } from "react-router-dom";
-import RootPage from "./Root/RootPage";
+import RootPage from "../pages/Root/RootPage";
 
 
 const router = createBrowserRouter(
