@@ -12,7 +12,9 @@ interface RouteStatus {
   isPending: boolean
 }
 
-let linkClass = ({ isActive, isPending }: {isActive: boolean, isPending: boolean}) => {
+const liClass = [s['li']].join(' ')
+
+const linkClass = ({ isActive, isPending }: {isActive: boolean, isPending: boolean}) => {
   return [
     s["link"],
     isPending ? "pending-link" : isActive ? "active-link" : null,
@@ -22,7 +24,7 @@ let linkClass = ({ isActive, isPending }: {isActive: boolean, isPending: boolean
 
 function SingleLink( { isDesktop }: props) {
   const desktopTabletNavLinks = routeLinkInfo.map((routeLink) => (
-    <li key={routeLink.name}>
+    <li className={liClass} key={routeLink.name}>
       <NavLink to={routeLink.path} className={linkClass}>
         { isDesktop && <span>{routeLink.order}</span> }
         <span>{routeLink.name}</span>

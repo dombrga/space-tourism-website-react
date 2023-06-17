@@ -59,7 +59,14 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 a { text-decoration: none; }
+ul { padding: 0; }
+li {
+  list-style: none;
+  text-decoration: none;
+  // display: inline;
+}
 .active-link { border-bottom: 1.5px solid white; }
+.active-link-sidebar { border-right: 4px solid white; }
 
 .bg-home {
   background: url('./assets/home/background-home-mobile.jpg') 0% 0% / cover no-repeat;

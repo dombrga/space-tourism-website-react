@@ -3,6 +3,8 @@ function debounce(func: () => void, time: number) {
   let timer: number;
 
   return function(event: UIEvent){
+      // console.log('event', event);
+    
       if(timer) clearTimeout(timer);
       timer = setTimeout(func, debTime, event);
   };

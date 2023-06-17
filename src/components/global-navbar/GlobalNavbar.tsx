@@ -17,11 +17,11 @@ function GlobalNavBar() {
   const mobileNav = (
     // <div className={s['nav-mobile']}>
     <>
-      <HamburgerMenu
+      <Sidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />
-      <Sidebar
+      <HamburgerMenu
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />

@@ -17,10 +17,19 @@ function HamburgerMenu({ isSidebarOpen, setIsSidebarOpen }: props) {
     setIsSidebarOpen(prev => !prev)
   }
 
-  const sidebarIcon = isSidebarOpen ? 
-                        <img className={closeIconClass} src={closeIcon} alt="close icon for closing sidebar" onClick={handleClick} />
-                        :
-                        <img className={hamburgerClass} src={hamburger} alt="hamburger menu for opening sidebar for navigation" onClick={handleClick} /> 
+  const sidebarIcon =
+    isSidebarOpen ? 
+      <img 
+        className={closeIconClass} 
+        src={closeIcon} alt="close icon for closing sidebar" 
+        onClick={handleClick} 
+      />
+    :
+      <img 
+        className={hamburgerClass} src={hamburger} 
+        alt="hamburger menu for opening sidebar for navigation" 
+        onClick={handleClick} 
+      /> 
 
   return (
     <>
