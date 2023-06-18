@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import SidebarLink from '../sidebar-link/SidebarLink'
 import s from './Sidebar.module.scss'
 
@@ -8,19 +8,32 @@ interface props {
 }
 
 
-function Sidebar({ isSidebarOpen }: props) {
+function Sidebar({ isSidebarOpen, setIsSidebarOpen }: props) {
   const sidebarRef = useRef<HTMLDivElement>(null)
   const sidebarClass = [
     s['sidebar'],
     isSidebarOpen ? s['open'] : null
   ].join(' ')
-
-  if(sidebarRef.current) {
-    // sidebarRef.current.style.width = isSidebarOpen ? '60%' : '0'
-    // sidebarRef.current.style.padding = isSidebarOpen ? '5rem 1.5rem 1.5rem 1.5rem' : '0'
-  }
-  // console.log('sidebar', sidebarRef.current?.style.width);
   
+  useEffect(() => {
+    function closeSidebar(e: MouseEvent) {
+      const hamburger = document.querySelector('#btn-nav-mobile')
+      const hasClickedHamburger = e.target === hamburger || hamburger?.contains(e.target as Node)
+      const hasClickedOutsideSidebar = !sidebarRef.current?.contains(e.target as Node)
+      
+      if(!hasClickedHamburger && hasClickedOutsideSidebar) {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    if(isSidebarOpen) {
+      window.addEventListener('click', closeSidebar)
+    }
+    
+    return () => {
+      window.removeEventListener('click', closeSidebar)
+    }
+  }, [isSidebarOpen])
 
   return (
     <div className={sidebarClass} ref={sidebarRef}>

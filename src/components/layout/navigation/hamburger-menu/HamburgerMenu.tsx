@@ -1,4 +1,4 @@
-import hamburger from '@/assets/shared/icon-hamburger.svg'
+import hamburgerIcon from '@/assets/shared/icon-hamburger.svg'
 import closeIcon from '@/assets/shared/icon-close.svg'
 import { useState } from 'react';
 import s from './HamburgerMenu.module.scss'
@@ -17,25 +17,23 @@ function HamburgerMenu({ isSidebarOpen, setIsSidebarOpen }: props) {
     setIsSidebarOpen(prev => !prev)
   }
 
-  const sidebarIcon =
-    isSidebarOpen ? 
-      <img 
-        className={closeIconClass} 
-        src={closeIcon} alt="close icon for closing sidebar" 
-        onClick={handleClick} 
-      />
-    :
-      <img 
-        className={hamburgerClass} src={hamburger} 
-        alt="hamburger menu for opening sidebar for navigation" 
-        onClick={handleClick} 
-      /> 
+  const icon = isSidebarOpen ? closeIcon : hamburgerIcon
+  const alt = isSidebarOpen ? 'close icon for closing sidebar' : 'hamburger menu for opening sidebar for navigation'
+  const iconClass = isSidebarOpen ? closeIconClass : hamburgerClass
 
   return (
-    <>
-      { sidebarIcon }
-    </>
-  )
+    <button 
+      type='button' 
+      id='btn-nav-mobile'
+      onClick={handleClick} 
+    >
+      <img 
+        className={iconClass} 
+        src={icon} 
+        alt={alt}
+      />
+    </button>
+)
 }
 
 export default HamburgerMenu
