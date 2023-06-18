@@ -1,3 +1,5 @@
+@use './assets/styles/base';
+
 // CSS resets from https://www.joshwcomeau.com/css/custom-css-reset/
 /*
   1. Use a more-intuitive box-sizing model.
@@ -57,6 +59,25 @@ p, h1, h2, h3, h4, h5, h6 {
   min-height: 100%;
   min-width: 100%;
 }
+
+h1 {
+  color: base.$primary;
+  text-transform: uppercase;
+  // font-size: 150px;
+  font-family: base.$bellefair;
+}
+
+h5 {
+  color: base.$secondary;
+  text-transform: uppercase;
+  font-family: base.$barlow;
+}
+
+p.body-text {
+  color: base.$primary;
+  font-family: base.$barlow;
+}
+
 
 a { text-decoration: none; }
 ul { padding: 0; }
