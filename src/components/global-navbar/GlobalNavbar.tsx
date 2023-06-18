@@ -10,12 +10,9 @@ function GlobalNavBar() {
   const [windowWidth, _] = useWindowSize();
 
   const isDesktop = windowWidth > 768
-  // console.log('isDesktop', isDesktop);
-  
   const desktopTabletNav = <SingleLink isDesktop={isDesktop} />;
 
   const mobileNav = (
-    // <div className={s['nav-mobile']}>
     <>
       <Sidebar
         isSidebarOpen={isSidebarOpen}

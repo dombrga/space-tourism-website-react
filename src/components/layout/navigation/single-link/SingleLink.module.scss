@@ -10,12 +10,14 @@
 
 .link {
   color: #fff;
-  text-transform: uppercase;
   font-family: base.$nav-links;
-  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  letter-spacing: 2.75px;
+  white-space: pre;
+
   padding: 1rem 0;
 
   > span:first-child {
-    padding-right: .5rem;
+    font-weight: 600;
   }
 }

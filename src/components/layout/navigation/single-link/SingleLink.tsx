@@ -26,8 +26,8 @@ function SingleLink( { isDesktop }: props) {
   const desktopTabletNavLinks = routeLinkInfo.map((routeLink) => (
     <li className={liClass} key={routeLink.name}>
       <NavLink to={routeLink.path} className={linkClass}>
-        { isDesktop && <span>{routeLink.order}</span> }
-        <span>{routeLink.name}</span>
+        <span>{ isDesktop && routeLink.order.concat('  ') }</span>
+        <span>{ routeLink.name }</span>
       </NavLink>
     </li>
   ));

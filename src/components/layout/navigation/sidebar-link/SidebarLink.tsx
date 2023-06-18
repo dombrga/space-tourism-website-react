@@ -13,8 +13,8 @@ const linkClass = ({ isActive, isPending }: {isActive: boolean, isPending: boole
 function SidebarLink() {
   const desktopTabletNavLinks = routeLinkInfo.map((routeLink) => (
     <li className={liClass} key={routeLink.name}>
-      <NavLink to={routeLink.path} className={linkClass}>
-        {routeLink.order}   {routeLink.name}
+      <NavLink to={routeLink.path} className={linkClass} aria-label={`link to ${routeLink.name} page`}>
+        <span>{ routeLink.order }</span>   {routeLink.name}
       </NavLink>
     </li>
   ));
