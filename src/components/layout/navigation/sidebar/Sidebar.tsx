@@ -16,8 +16,9 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }: props) {
   ].join(' ')
   
   useEffect(() => {
-    function closeSidebar(e: MouseEvent) {
+    function closeSidebarOutsideClick(e: MouseEvent) {
       const hamburger = document.querySelector('#btn-nav-mobile')
+
       const hasClickedHamburger = e.target === hamburger || hamburger?.contains(e.target as Node)
       const hasClickedOutsideSidebar = !sidebarRef.current?.contains(e.target as Node)
       
@@ -27,11 +28,11 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }: props) {
     }
 
     if(isSidebarOpen) {
-      window.addEventListener('click', closeSidebar)
+      window.addEventListener('click', closeSidebarOutsideClick)
     }
     
     return () => {
-      window.removeEventListener('click', closeSidebar)
+      window.removeEventListener('click', closeSidebarOutsideClick)
     }
   }, [isSidebarOpen])
 
